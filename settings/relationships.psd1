@@ -12,9 +12,9 @@
     Junpei_to_Sora = @{
         Speaker   = 'Junpei'
         Listener  = 'Sora'
-        Current   = '氷室さん'
-        ChangedAt = '第1話〜'
-        Note      = '素っ気ないソラに対しては少し慎重で、苗字+さん呼び。'
+        Current   = '綾波さん'
+        ChangedAt = '第1話〜(第2話でキャラ名を氷室ソラ→綾波レイに変更、呼び方も追従)'
+        Note      = '素っ気ないレイに対しては少し慎重で、苗字+さん呼び。'
     }
 
     Junpei_to_Asuka = @{
@@ -36,9 +36,9 @@
     Junpei_to_Kaname = @{
         Speaker   = 'Junpei'
         Listener  = 'Kaname'
-        Current   = '三宅先生'
+        Current   = '葛城先生'
         ChangedAt = '第2話'
-        Note      = '教師という立場もあり、当面は苗字+先生呼び。'
+        Note      = '教師という立場もあり、当面は苗字+先生呼び。(キャラ名は三宅カナメ→葛城ミサトに変更済み)'
     }
 
     Asuka_to_Junpei = @{
@@ -54,7 +54,7 @@
         Listener  = 'Junpei'
         Current   = '鈴木くん'
         ChangedAt = '第2話'
-        Note      = 'アスカとは対照的に、こちらは苗字+くんの慎重な呼び方を維持。'
+        Note      = 'アスカとは対照的に、こちらは苗字+くんの慎重な呼び方を維持。(キャラ名は氷室ソラ→綾波レイに変更済み、呼び方自体は変更なし)'
     }
 
     Keita_to_Junpei = @{
