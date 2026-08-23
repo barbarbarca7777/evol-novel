@@ -75,6 +75,22 @@
         Note      = ''
     }
 
+    Sora_to_Shinji = @{
+        Speaker   = 'Sora'
+        Listener  = 'Shinji'
+        Current   = '碇くん'
+        ChangedAt = '第4話〜(設定として確定)'
+        Note      = '組織内の顔見知り。原作の綾波レイ同様、どれだけ親しくなっても敬称を崩さない話し方が持ち味。'
+    }
+
+    Asuka_to_Shinji = @{
+        Speaker   = 'Asuka'
+        Listener  = 'Shinji'
+        Current   = '碇'
+        ChangedAt = '第4話〜(設定として確定)'
+        Note      = '同じ組織の戦力として存在は把握しているが、個人的に親しくはない。ライバル視・やや見下し気味で、敬称なしの呼び捨て。'
+    }
+
     Asuka_to_Kaname = @{
         Speaker       = 'Asuka'
         Listener      = 'Kaname'
