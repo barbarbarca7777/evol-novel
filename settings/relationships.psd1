@@ -131,4 +131,20 @@
         ChangedAt = '第2話'
         Note      = '教師としての立場から苗字+くん呼びで固定。'
     }
+
+    Junpei_to_Shinji = @{
+        Speaker   = 'Junpei'
+        Listener  = 'Shinji'
+        Current   = 'シンジ'
+        ChangedAt = '第5話(初共闘の最中、名前で呼びかけた)'
+        Note      = '第4話の「碇、だっけ」という探り探りの苗字呼びから、共鳴を経て下の名前呼びに移行。'
+    }
+
+    Shinji_to_Junpei = @{
+        Speaker   = 'Shinji'
+        Listener  = 'Junpei'
+        Current   = 'お前'
+        ChangedAt = '第5話(初めて明確にジュンペイへ呼びかけた)'
+        Note      = '内向的で他人への呼びかけ自体が少ないシンジが、初めて自分から言葉を向けた相手。名前ではなく「お前」だが、そこに含まれる感情の温度は高い。'
+    }
 }
