@@ -34,11 +34,54 @@
     }
 
     Junpei_to_Kaname = @{
-        Speaker   = 'Junpei'
+        Speaker       = 'Junpei'
+        Listener      = 'Kaname'
+        Current       = '葛城先生'
+        ChangedAt     = '第2話'
+        PlannedChange = 'ミサトさん'
+        PlannedTiming = '中盤、距離が縮まってから'
+        Note          = '教師という立場もあり、当面は苗字+先生呼び。関係が深まるにつれ「ミサトさん」呼びに移行する想定。'
+    }
+
+    Reiji_to_Kaname = @{
+        Speaker   = 'Reiji'
         Listener  = 'Kaname'
-        Current   = '葛城先生'
-        ChangedAt = '第2話'
-        Note      = '教師という立場もあり、当面は苗字+先生呼び。(キャラ名は三宅カナメ→葛城ミサトに変更済み)'
+        Current   = '葛城一佐'
+        ChangedAt = '第3話〜'
+        Note      = '組織の上下関係上、下の名前では呼ばない。苗字+階級で固定。'
+    }
+
+    Kaname_to_Reiji = @{
+        Speaker   = 'Kaname'
+        Listener  = 'Reiji'
+        Current   = '司令'
+        ChangedAt = '第3話〜'
+        Note      = '職務上の上司として役職呼び。名前(ゲンドウ)では呼ばない。'
+    }
+
+    Riko_to_Kaname = @{
+        Speaker   = 'Riko'
+        Listener  = 'Kaname'
+        Current   = 'ミサト'
+        ChangedAt = '未執筆(設定のみ)'
+        Note      = '対等な同僚かつ旧知の仲という想定で、下の名前呼び。'
+    }
+
+    Kaname_to_Riko = @{
+        Speaker   = 'Kaname'
+        Listener  = 'Riko'
+        Current   = 'リツコ'
+        ChangedAt = '未執筆(設定のみ)'
+        Note      = ''
+    }
+
+    Asuka_to_Kaname = @{
+        Speaker       = 'Asuka'
+        Listener      = 'Kaname'
+        Current       = '未確定(本文未登場)'
+        PlannedChange = 'ミサト'
+        PlannedTiming = '中盤以降、距離が縮まってから(呼び捨てが似合うキャラ)'
+        Note          = ''
     }
 
     Asuka_to_Junpei = @{
