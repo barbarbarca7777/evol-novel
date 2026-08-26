@@ -1,150 +1,64 @@
 ﻿@{
-    # キャラ同士の呼び方(二人称・呼称)の一覧。
+    # 呼称・関係性設定。添付資料 第14章(呼称設定ルール)・第15章(恋愛マップ)・第16章(寮同室配置)・
+    # 9-7節(天宮家)を移植(2026-08-27、ベース乗り換え)。原本は notes/source_v2/02B・02C を参照。
+    # 旧設定は archive/v1-evol/relationships.psd1 に保存。
     #
-    # 注意: このファイルは Sync-Settings.ps1 の自動置換の対象外。
-    # 呼び方は物語の時系列で変化するため(過去の話の地の文まで一括置換すると
-    # 過去の関係性が壊れる)、ここは「今書いている話の時点で誰が誰をどう呼ぶか」
-    # を確認するための参照用の台帳として使う。
-    #
-    # 新しい話を書くときは、この一覧を見て呼び方を統一する。
-    # 呼び方が変わったら Current を更新し、ChangedAt にどの話で変わったかを記録する。
+    # 注意: このファイルは Sync-Settings.ps1 の自動置換の対象外(参照用の台帳)。
+    # 呼び方は物語の時系列で変化するため、執筆時は都度この一覧を確認する。
 
-    Junpei_to_Sora = @{
-        Speaker   = 'Junpei'
-        Listener  = 'Sora'
-        Current   = '綾波さん'
-        ChangedAt = '第1話〜(第2話でキャラ名を氷室ソラ→綾波レイに変更、呼び方も追従)'
-        Note      = '素っ気ないレイに対しては少し慎重で、苗字+さん呼び。'
+    SpeechRules = @{
+        Shinji  = '一人称「僕」、二人称「キミ」。感情爆発時のみ「俺」。'
+        Junpei  = '一人称「俺」、二人称「お前」。「キミ」は使用しない。'
+        Asuka   = '一人称「あたし」。姓は「式波」。家族は「パパ」「ママ」。'
+        Rei     = '短い言い切り。敬語なし。'
+        Gendou  = '簡潔で抑制的。感情を言葉に出さない。'
     }
 
-    Junpei_to_Asuka = @{
-        Speaker   = 'Junpei'
-        Listener  = 'Asuka'
-        Current   = 'アスカ'
-        ChangedAt = '第2話(別れ際、初めて名前で呼んだ)'
-        Note      = 'ジュンペイの人懐っこい性格通り、早期から下の名前呼びに移行。'
+    JunpeiAddressedBy = @{
+        Shinji = @{ Current = 'ジュンペイ'; ChangedAt = '第1〜2話'; Before = '鈴木' }
+        Asuka  = @{ Current = 'ジュンペイ'; Note = '認めた後に「鈴木」から変化' }
+        Rei    = @{ Current = 'ジュンペイ'; Before = '鈴木くん'; Note = '感情変化と連動して移行' }
+        Kaoru  = @{ Current = 'ジュンペイ'; Note = '最初から' }
     }
 
-    Junpei_to_Keita = @{
-        Speaker   = 'Junpei'
-        Listener  = 'Keita'
-        Current   = 'ケイタ'
-        ChangedAt = '第1話〜(幼馴染のため最初から)'
-        Note      = ''
+    # 第15章 恋愛マップ
+    RomanceMap = @{
+        AffectionTowardShinji  = @('レイ(無自覚の安心)', 'アスカ(本命)', 'エリザ(王の関心)', 'クロエ(「こいつのどこが」)')
+        AffectionTowardRei     = @('シンジ(無自覚)', 'アンリ(悲恋)', 'リョウ(静かな片想い)', 'ユーゴ(グイグイ系)')
+        AffectionTowardAsuka   = @('シンジ(無自覚)', 'ニコラ(騎士の敬意)', 'クロエ(歪んだ執着)', 'レイジ(真正面)')
+        AffectionTowardJunpei  = @('ソラ(共鳴)', 'ナツメ(気まぐれ)', '朝霧ユズハ(メインヒロイン)')
+        AffectionTowardTouji   = @('ヒカリ(委員長の恋)', 'ミヤコ(世話焼き)')
+        ConfirmedPairs = @(
+            @{ Pair = 'ジュンペイ⇔ユズハ'; Status = '繋がる' }
+            @{ Pair = 'ケンスケ⇔シホ'; Status = '第2部で公認' }
+            @{ Pair = 'ヒカリ→トウジ'; Status = '第4部で決着' }
+            @{ Pair = '鷹山⇔神代レイカ'; Status = '元恋人。在学中〜卒業後数年は交際、レイカの離脱により破局。現在は互いに気にかけているが昔の話はしない' }
+        )
     }
 
-    Junpei_to_Kaname = @{
-        Speaker       = 'Junpei'
-        Listener      = 'Kaname'
-        Current       = '葛城先生'
-        ChangedAt     = '第2話'
-        PlannedChange = 'ミサトさん'
-        PlannedTiming = '中盤、距離が縮まってから'
-        Note          = '教師という立場もあり、当面は苗字+先生呼び。関係が深まるにつれ「ミサトさん」呼びに移行する想定。'
+    # 第16章 寮同室配置
+    DormAssignments = @{
+        BoysBuilding = @(
+            @{ Room = '203号室'; Occupants = @('碇シンジ', '鈴木ジュンペイ'); Note = '主人公ペア(A+A)' }
+            @{ Room = '204号室'; Occupants = @('鈴原トウジ', '相田ケンスケ'); Note = 'B+B' }
+            @{ Room = '205号室'; Occupants = @('御堂リョウ', '鬼頭タクマ'); Note = 'C+B' }
+        )
+        GirlsBuilding = @(
+            @{ Room = '201号室'; Occupants = @('式波アスカ', '洞木ヒカリ'); Note = 'A+B・誇りの剣士+世話焼き委員長' }
+            @{ Room = '202号室'; Occupants = @('綾波レイ', '水瀬ミヤコ'); Note = 'A+C・静かな観察者+穏やかな母性' }
+            @{ Room = '207号室'; Occupants = @('天宮ソラ', '志田シホ'); Note = 'C+C' }
+        )
+        DesignPolicy = '班またぎペアを意図的に配置。寮生活を通じ、教室外での成長や班を超えた関係性を構築する。'
     }
 
-    Reiji_to_Kaname = @{
-        Speaker   = 'Reiji'
-        Listener  = 'Kaname'
-        Current   = '葛城一佐'
-        ChangedAt = '第3話〜'
-        Note      = '組織の上下関係上、下の名前では呼ばない。苗字+階級で固定。'
-    }
-
-    Kaname_to_Reiji = @{
-        Speaker   = 'Kaname'
-        Listener  = 'Reiji'
-        Current   = '司令'
-        ChangedAt = '第3話〜'
-        Note      = '職務上の上司として役職呼び。名前(ゲンドウ)では呼ばない。'
-    }
-
-    Riko_to_Kaname = @{
-        Speaker   = 'Riko'
-        Listener  = 'Kaname'
-        Current   = 'ミサト'
-        ChangedAt = '未執筆(設定のみ)'
-        Note      = '対等な同僚かつ旧知の仲という想定で、下の名前呼び。'
-    }
-
-    Kaname_to_Riko = @{
-        Speaker   = 'Kaname'
-        Listener  = 'Riko'
-        Current   = 'リツコ'
-        ChangedAt = '未執筆(設定のみ)'
-        Note      = ''
-    }
-
-    Sora_to_Shinji = @{
-        Speaker   = 'Sora'
-        Listener  = 'Shinji'
-        Current   = '碇くん'
-        ChangedAt = '第4話〜(設定として確定)'
-        Note      = '組織内の顔見知り。原作の綾波レイ同様、どれだけ親しくなっても敬称を崩さない話し方が持ち味。'
-    }
-
-    Asuka_to_Shinji = @{
-        Speaker   = 'Asuka'
-        Listener  = 'Shinji'
-        Current   = '碇'
-        ChangedAt = '第4話〜(設定として確定)'
-        Note      = '同じ組織の戦力として存在は把握しているが、個人的に親しくはない。ライバル視・やや見下し気味で、敬称なしの呼び捨て。'
-    }
-
-    Asuka_to_Kaname = @{
-        Speaker       = 'Asuka'
-        Listener      = 'Kaname'
-        Current       = '未確定(本文未登場)'
-        PlannedChange = 'ミサト'
-        PlannedTiming = '中盤以降、距離が縮まってから(呼び捨てが似合うキャラ)'
-        Note          = ''
-    }
-
-    Asuka_to_Junpei = @{
-        Speaker   = 'Asuka'
-        Listener  = 'Junpei'
-        Current   = 'ジュンペイ'
-        ChangedAt = '第2話(連行される直前、動揺して初めて名前で呼んだ)'
-        Note      = 'ツンデレ気味に、心配のあまり素で名前を呼んでしまった形。'
-    }
-
-    Sora_to_Junpei = @{
-        Speaker   = 'Sora'
-        Listener  = 'Junpei'
-        Current   = '鈴木くん'
-        ChangedAt = '第2話'
-        Note      = 'アスカとは対照的に、こちらは苗字+くんの慎重な呼び方を維持。(キャラ名は氷室ソラ→綾波レイに変更済み、呼び方自体は変更なし)'
-    }
-
-    Keita_to_Junpei = @{
-        Speaker   = 'Keita'
-        Listener  = 'Junpei'
-        Current   = 'ジュンペイ'
-        ChangedAt = '第1話〜(幼馴染のため最初から)'
-        Note      = ''
-    }
-
-    Kaname_to_Junpei = @{
-        Speaker   = 'Kaname'
-        Listener  = 'Junpei'
-        Current   = '鈴木くん'
-        ChangedAt = '第2話'
-        Note      = '教師としての立場から苗字+くん呼びで固定。'
-    }
-
-    Junpei_to_Shinji = @{
-        Speaker   = 'Junpei'
-        Listener  = 'Shinji'
-        Current   = 'シンジ'
-        ChangedAt = '第5話(初共闘の最中、名前で呼びかけた)'
-        Note      = '第4話の「碇、だっけ」という探り探りの苗字呼びから、共鳴を経て下の名前呼びに移行。'
-    }
-
-    Shinji_to_Junpei = @{
-        Speaker   = 'Shinji'
-        Listener  = 'Junpei'
-        Current   = '君'
-        ChangedAt = '第5話(初めて明確にジュンペイへ呼びかけた)'
-        Note      = '内向的で他人への呼びかけ自体が少ないシンジが、初めて自分から言葉を向けた相手。「お前」のような乱暴な二人称は彼の性格に合わないため、「君」を採用。'
+    # 9-7節 天宮家の血筋と家族構成
+    AmamiyaFamily = @{
+        Relation      = '天宮ソラはシンジの母方の従姉妹(女性)。天宮家として雷神(ライジン)を宿す。ゲンドウは彼女が「あの血筋の荒神」であることを認知している。'
+        Sisters       = '碇ユイ(姉)と天宮メイ(妹)の実の姉妹。ユイは2010年の第一次災厄で能力を「消失」したが、メイは現在も存命。'
+        ShinjiSoraRelation = '実の従兄妹(いとこ)。'
+        EstrangementTruth  = 'シンジの持つ「測定不能(UNKNOWN)」という力の異質さを秘匿するため、ゲンドウ・ユイ・メイの三者が合意し、親戚付き合いを断絶。シンジは自分に従兄妹(ソラ)や叔母(メイ)がいる事実を教えられずに育った。'
+        MeiToSoraCharge    = '入学に際し、メイはソラへ事実を伝え、「天宮の力、私や姉さんの力を決して怖がることなく受け入れること」「不安定な力に困るかもしれない彼(シンジ)を隣で見守ってあげなさい」と託した。'
+        SoraStance         = '母の教えを守り、シンジを見守る決意をしているが、雷神の制御に自身も苦労していることや不器用さから、シンジに対しては厳しく突き放すような態度になってしまう。'
+        PowerNature        = '天宮の力は強大だが極めて不安定な部分が大きい。ソラの「雷神」もその影響を受けており、シンジの「UNKNOWN」の根底にもこの天宮の血筋の力が流れている。'
     }
 }

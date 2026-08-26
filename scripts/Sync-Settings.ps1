@@ -16,17 +16,18 @@ $RepoRoot     = Split-Path -Parent $PSScriptRoot
 $SettingsDir  = Join-Path $RepoRoot 'settings'
 $SnapshotDir  = Join-Path $SettingsDir '.snapshot'
 $ManuscriptDir = Join-Path $RepoRoot 'manuscript'
-$SettingFiles = @('characters.psd1', 'world.psd1')
+$SettingFiles = @('characters.psd1', 'world.psd1', 'factions.psd1')
 
 # 置換の対象にする「固有名詞」フィールドのみを許可リスト化する。
 # Personality/Background のような説明文は自動置換の対象にしない。
 # Surname/Given は意図的に含めない: 同姓の別キャラがいると誤爆するため
 # (例: レイジの姓を変えたら無関係なジュンペイの姓まで書き換わった事故があった)。
 # 名前を変えるときは必ず FullName を書き換えること。
+# DisplayName は factions.psd1(NERV/ゼーレ等の組織名・学園名)向けに追加(2026-08-27)。
 $ReplaceableKeys = @(
     'FullName', 'Nickname', 'Nicknames',
     'EvaName', 'Technique', 'OrgName', 'SchoolName', 'PlaceName',
-    'ShitoName', 'Title'
+    'ShitoName', 'Title', 'DisplayName'
 )
 
 function Get-FlatMap {
