@@ -18,6 +18,40 @@
         'NERV学園の通常の学年実力基準: 伍級が大半、肆級が数名、参級が1〜2名いれば優秀、弐級は学年に1人いれば大騒ぎ、壱級は在学中に到達すれば歴代でも語り継がれるレベル。シンジたちの世代は選抜クラスの多くが壱級以上に到達する異常な「当たり年」(ゲンドウの意図的な選抜が背景にある)。'
     )
 
+    # 第12章 成長推移表(入学時点でのランクは第1話の測定シーン等で直接使う数値)
+    GrowthProgression = @{
+        HonkoGrade1 = @(
+            @{ Character = 'アスカ'; AtEnrollment = '参級'; Part1End = '弐級'; Part2 = '弐級'; Part34 = '壱級'; Final = '特級(続編)' }
+            @{ Character = 'レイ'; AtEnrollment = '参級'; Part1End = '弐級'; Part2 = '弐級'; Part34 = '壱級'; Final = '特級(続編)' }
+            @{ Character = 'トウジ'; AtEnrollment = '参級'; Part1End = '参級'; Part2 = '弐級'; Part34 = '弐級'; Final = '準特級(第4部)' }
+            @{ Character = 'ソラ'; AtEnrollment = '参級'; Part1End = '参級'; Part2 = '弐級'; Part34 = '壱級'; Final = '準特級' }
+            @{ Character = 'ケンスケ'; AtEnrollment = '肆級'; Part1End = '参級'; Part2 = '弐級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'ヒカリ'; AtEnrollment = '肆級'; Part1End = '参級'; Part2 = '参級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'タクマ'; AtEnrollment = '肆級'; Part1End = '参級'; Part2 = '参級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'リョウ'; AtEnrollment = '肆級'; Part1End = '参級'; Part2 = '弐級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'ミヤコ'; AtEnrollment = '肆級'; Part1End = '肆級'; Part2 = '参級'; Part34 = '弐級'; Final = '弐級' }
+            @{ Character = 'シホ'; AtEnrollment = '肆級'; Part1End = '肆級'; Part2 = '参級'; Part34 = '弐級'; Final = '弐級' }
+            @{ Character = 'シンジ'; AtEnrollment = '測定不能'; Part1End = '測定不能'; Part2 = '測定不能'; Part34 = '測定不能'; Final = '特級' }
+            @{ Character = 'ジュンペイ'; AtEnrollment = '零'; Part1End = '零(参門一度到達)'; Part2 = '零(弐門常用/参門制限)'; Part34 = '零(四門・伍門)'; Final = '零(伍門=瞬間特級)' }
+        )
+        KyotoGrade1 = @(
+            @{ Character = 'ハヤテ'; AtEnrollment = '参級'; Part2 = '弐級'; Part34 = '壱級'; Final = '準特級' }
+            @{ Character = 'ソウ'; AtEnrollment = '肆級'; Part2 = '参級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'アオイ'; AtEnrollment = '肆級'; Part2 = '参級'; Part34 = '弐級'; Final = '壱級' }
+            @{ Character = 'ミツキ'; AtEnrollment = '肆級'; Part2 = '肆級'; Part34 = '参級'; Final = '弐級' }
+        )
+        EuropeGrade1 = @(
+            @{ Character = 'クロエ'; AtEnrollment = '参級'; Part2 = '弐級'; Part34 = '壱級'; Final = '準特級' }
+        )
+        FinalRankSummary = @(
+            @{ Rank = '特級'; Count = 3; Characters = @('シンジ', 'アスカ(続編)', 'レイ(続編)') }
+            @{ Rank = '瞬間特級'; Count = 1; Characters = @('ジュンペイ') }
+            @{ Rank = '準特級'; Count = 4; Characters = @('トウジ', 'ソラ', 'ハヤテ', 'クロエ') }
+            @{ Rank = '壱級'; Count = 7; Characters = @('ケンスケ', 'ヒカリ', 'タクマ', 'リョウ', 'ソウ', 'アオイ', 'ソウタ') }
+            @{ Rank = '弐級'; Count = 3; Characters = @('ミヤコ', 'シホ', 'ミツキ') }
+        )
+    }
+
     # 能力5分類体系
     PowerTypes = @(
         @{ Type = '属性型'; Note = '自然現象・元素を扱う'; Examples = @('炎', '雷', '風', '水', '光', '砂') }
