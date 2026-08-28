@@ -15,10 +15,15 @@
     }
 
     JunpeiAddressedBy = @{
-        Shinji = @{ Current = 'ジュンペイ'; ChangedAt = '第1〜2話'; Before = '鈴木' }
+        Shinji = @{ Current = 'ジュンペイ'; ChangedAt = '第2話冒頭'; Before = '鈴木くん→ジュンペイ(203号室での短いやり取りで明示的に移行)' }
         Asuka  = @{ Current = 'ジュンペイ'; Note = '認めた後に「鈴木」から変化' }
         Rei    = @{ Current = 'ジュンペイ'; Before = '鈴木くん'; Note = '感情変化と連動して移行' }
         Kaoru  = @{ Current = 'ジュンペイ'; Note = '最初から' }
+    }
+
+    ShinjiAddressedBy = @{
+        Asuka = @{ Current = '式波さん'; Note = '2026-08-28確定。出会って間もないため下の名前+さんは早すぎるという判断で、姓+さんに統一(第2話で使用)' }
+        Rei   = @{ Current = '綾波さん'; Note = '同上、姓+さん' }
     }
 
     # 第15章 恋愛マップ
